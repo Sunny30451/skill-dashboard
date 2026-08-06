@@ -1,0 +1,193 @@
+# skill-dashboard
+Vibe coding project - One App - Various AI generated implementation in one repository seperated in branches.
+
+Branch seperation:
+Best-Effort im Pattern:
+
+- ChatGPT
+  - 5.5
+    - Instant
+    - Low
+    - Medium
+    - High
+    - Extra High
+    - Ultra
+  - 5.6
+    - Terra
+      - Instant
+      - Low
+      - Medium
+      - High
+      - Extra High
+      - Ultra
+    - Luna
+      - Instant
+      - Low
+      - Medium
+      - High
+      - Extra High
+      - Ultra
+      - Terra
+    - Sol
+      - Low
+      - Medium
+      - High
+      - Extra High
+      - Ultra
+- Claude
+  - 3.7
+    - Sonnet
+      - Instant
+      - Low
+      - Medium
+      - High
+  - 4.x
+    - Haiku
+      - Instant
+      - Low
+      - Medium
+    - Sonnet
+      - Instant
+      - Low
+      - Medium
+      - High
+      - Extra High
+    - Opus
+      - Low
+      - Medium
+      - High
+      - Extra High
+      - Ultra
+- Gemini
+  - 2.5
+    - Flash
+      - Instant
+      - Low
+      - Medium
+      - High
+    - Pro
+      - Low
+      - Medium
+      - High
+      - Extra High
+      - Ultra
+  - 3.x
+    - Flash
+      - Instant
+      - Low
+      - Medium
+      - High
+    - Pro
+      - Low
+      - Medium
+      - High
+      - Extra High
+      - Ultra
+- Grok
+  - 3.x
+    - Standard
+      - Instant
+      - Low
+      - Medium
+      - High
+    - Heavy
+      - High
+      - Extra High
+      - Ultra
+  - 4.x
+    - Standard
+      - Instant
+      - Low
+      - Medium
+      - High
+      - Extra High
+    - Heavy
+      - High
+      - Extra High
+      - Ultra
+- Llama
+  - 3.x
+    - 70B
+      - Instant
+      - Low
+      - Medium
+      - High
+    - 405B
+      - Low
+      - Medium
+      - High
+      - Extra High
+  - 4.x
+    - Scout
+      - Instant
+      - Low
+      - Medium
+      - High
+    - Maverick
+      - Low
+      - Medium
+      - High
+      - Extra High
+      - Ultra
+- DeepSeek
+  - V3.x
+    - Base
+      - Instant
+      - Low
+      - Medium
+      - High
+  - R1.x
+    - Reasoning
+      - Low
+      - Medium
+      - High
+      - Extra High
+      - Ultra
+- Mistral
+  - Large 2
+    - Base
+      - Instant
+      - Low
+      - Medium
+      - High
+  - Medium 3
+    - Base
+      - Instant
+      - Low
+      - Medium
+  - Codestral
+    - Code
+      - Instant
+      - Low
+      - Medium
+      - High
+- Qwen
+  - 3.x
+    - Base
+      - Instant
+      - Low
+      - Medium
+      - High
+    - Thinking
+      - Low
+      - Medium
+      - High
+      - Extra High
+  - QwQ
+    - Reasoning
+      - Low
+      - Medium
+      - High
+      - Extra High
+      - Ultra
+- Amazon Nova
+  - Pro
+    - Instant
+    - Low
+    - Medium
+    - High
+  - Premier
+    - Low
+    - Medium
+    - High
+    - Extra High
