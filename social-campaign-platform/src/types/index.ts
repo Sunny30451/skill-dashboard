@@ -1,8 +1,8 @@
 // User Roles
-export type UserRole = 'Admin' | 'Worker' | 'Visitor' | 'Agent';
+export type UserRole = "Admin" | "Worker" | "Visitor" | "Agent";
 
 // Task Status
-export type TaskStatus = 'planned' | 'in_progress' | 'blocker' | 'finished';
+export type TaskStatus = "planned" | "in_progress" | "blocker" | "finished";
 
 // User Interface
 export interface User {
@@ -21,7 +21,7 @@ export interface Campaign {
   id: string;
   name: string;
   description: string;
-  status: 'planning' | 'active' | 'paused' | 'completed' | 'archived';
+  status: "planning" | "active" | "paused" | "completed" | "archived";
   startDate: Date;
   endDate: Date;
   createdAt: Date;
@@ -35,7 +35,7 @@ export interface Phase {
   description?: string;
   startDate: Date;
   endDate: Date;
-  status: 'upcoming' | 'current' | 'completed';
+  status: "upcoming" | "current" | "completed";
   order: number;
 }
 
@@ -45,7 +45,7 @@ export interface Milestone {
   name: string;
   description?: string;
   dueDate: Date;
-  status: 'pending' | 'in_progress' | 'completed' | 'blocked';
+  status: "pending" | "in_progress" | "completed" | "blocked";
   order: number;
 }
 
@@ -56,8 +56,8 @@ export interface WorkPackage {
   description: string;
   status: TaskStatus;
   assigneeId?: string;
-  assigneeType: 'user' | 'agent';
-  priority: 'low' | 'medium' | 'high' | 'critical';
+  assigneeType: "user" | "agent";
+  priority: "low" | "medium" | "high" | "critical";
   dueDate?: Date;
   estimatedHours?: number;
   actualHours?: number;
@@ -72,9 +72,8 @@ export interface SocialMediaAccount {
   name: string;
   email: string;
   url: string;
-  password?: string; // encrypted in production
-  token?: string;
   apiEndpoint?: string;
+  connectionStatus: "connected" | "disconnected" | "error";
   isActive: boolean;
   campaignIds: string[];
   lastSyncedAt?: Date;
@@ -104,7 +103,7 @@ export interface MediaFile {
   size: number;
   url: string;
   thumbnailUrl?: string;
-  uploadedBy: string;
+  uploadedBy?: string;
   campaignId?: string;
   tags?: string[];
   createdAt: Date;
@@ -128,7 +127,7 @@ export interface Workflow {
   name: string;
   description?: string;
   steps: WorkflowStep[];
-  triggerType: 'manual' | 'scheduled' | 'event';
+  triggerType: "manual" | "scheduled" | "event";
   schedule?: string; // cron expression
   isActive: boolean;
   campaignId?: string;
@@ -148,9 +147,9 @@ export interface WorkflowStep {
 // AI/KI Settings
 export interface AISettings {
   id: string;
-  provider: 'local' | 'cloud';
+  provider: "ollama" | "cloud";
   endpoint: string;
-  apiKey?: string;
+  apiKeyConfigured: boolean;
   model: string;
   temperature: number;
   maxTokens: number;
@@ -163,7 +162,7 @@ export interface SystemSettings {
   id: string;
   key: string;
   value: string;
-  category: 'general' | 'ai' | 'workflow' | 'security';
+  category: "general" | "ai" | "workflow" | "security";
   description?: string;
   updatedAt: Date;
 }
@@ -178,6 +177,7 @@ export interface Participant {
   role: string;
   campaignIds: string[];
   avatar?: string;
+  status?: "active" | "invited" | "inactive";
 }
 
 // Chat Message
@@ -188,6 +188,7 @@ export interface ChatMessage {
   content: string;
   timestamp: Date;
   isSystem?: boolean;
+  conversationId?: string;
 }
 
 // Credential Storage
@@ -196,19 +197,41 @@ export interface Credential {
   userId: string;
   service: string;
   username: string;
-  password?: string; // encrypted
   notes?: string;
   createdAt: Date;
   updatedAt: Date;
 }
 
-// Dashboard Stats
-export interface DashboardStats {
-  totalCampaigns: number;
-  activeCampaigns: number;
-  totalTasks: number;
-  tasksByStatus: Record<TaskStatus, number>;
-  totalPosts: number;
-  totalEngagement: number;
-  upcomingDeadlines: WorkPackage[];
+export interface AppSettings {
+  aiProvider: "ollama" | "cloud";
+  aiModel: string;
+  aiEndpoint: string;
+  apiKeyConfigured: boolean;
+  socialSyncEnabled: boolean;
+  workflowEngineEnabled: boolean;
+}
+
+export interface WorkflowRun {
+  id: string;
+  workflowId: string;
+  status: "running" | "completed" | "failed";
+  startedAt: Date;
+  completedAt?: Date;
+  message?: string;
+  stepResults?: WorkflowStepResult[];
+}
+
+export interface WorkflowStepResult {
+  stepId: string;
+  action: string;
+  agentId?: string;
+  status: "running" | "completed" | "failed" | "skipped";
+  startedAt: Date;
+  completedAt?: Date;
+  output?: string;
+  error?: string;
+  model?: string;
+  promptTokens?: number;
+  completionTokens?: number;
+  totalDurationMs?: number;
 }
